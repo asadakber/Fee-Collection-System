@@ -1,0 +1,104 @@
+<nav style="opacity:0.9;background-color:black" class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="#"><img width="50" height="50" src="../../../../assets/icon-money-1-300x300.png">Fees Collection System</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <form class="form-inline my-2 my-lg-0">
+      <button style="margin-left:980px;" class="btn btn-outline-danger my-2 my-sm-0" type="submit" routerLink="/admin">Back</button>
+    </form>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row  justify-content-center">
+      <div class="col-md-5">
+          <div class="card card0">
+              <div class="card-body">
+                  <div class="card-title">
+                      <img style="margin-left:160px;" width="80" height="80" src="../../../../assets/icon-money-1-300x300.png">
+                      <h3 style="color: white;text-align: center;margin-top:10px">Add Fees</h3>
+                  </div>
+                  
+                  <form #addform="ngForm" (ngSubmit)="onSubmit(addform)">
+                      <input name="$key" #$key="ngModel" [(ngModel)]="fees.feesSelected.$key" type="hidden" class="form form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <div class="form-group">
+                       
+                          <label style="color:white" for="exampleInputEmail1">Student Name</label>
+                          <input name="studentName" #studentName="ngModel" [(ngModel)]="fees.feesSelected.studentName" type="text" class="form form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Student Name">
+                          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                       
+                            <label style="color:white" for="exampleInputEmail1">Father Name</label>
+                            <input name="fatherName" #fatherName="ngModel" [(ngModel)]="fees.feesSelected.fatherName" type="text" class="form form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Father Name">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                          </div>
+                          <div class="form-group">
+                              <label style="color:white" for="exampleFormControlSelect1">Class</label>
+                              <select name="class" #class="ngModel" [(ngModel)]="fees.feesSelected.class" class="form-1 form-control" id="exampleFormControlSelect1">
+                                <option value="I">I</option>
+                                <option value="II">II</option>
+                                <option value="III">III</option>
+                                <option value="IV">IV</option>
+                                <option value="V">V</option>
+                                <option value="VI">VI</option>
+                                <option value="VII">VII</option>
+                                <option value="VIII">VIII</option>
+                                <option value="IX">IX</option>
+                                <option value="X">X</option>
+                              </select>
+                            </div>
+                       
+                            <div class="form-group">
+                       
+                                <label style="color:white" for="exampleInputEmail1">Roll No</label>
+                                <input name="rollNo" #rollNo="ngModel" [(ngModel)]="fees.feesSelected.rollNo" type="number" class="form form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Roll No">
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                              </div>
+                      <div class="form-group">
+
+                          <div class="form-group">
+                              <label style="color:white" for="exampleFormControlSelect1">Section</label>
+                              <select name="section" #section="ngModel" [(ngModel)]="fees.feesSelected.section" class="form-1 form-control" id="exampleFormControlSelect1">
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="E">E</option>
+                              </select>
+                            </div>
+                       
+                        <label style="color:white" for="exampleInputEmail1">Admission Fees</label>
+                        <input name="admissionFees" #admissionFees="ngModel" [(ngModel)]="fees.feesSelected.admissionFees"  type="number" class="form form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="admission fees">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                      </div>
+                      <div class="form-group">
+                          <label style="color:white" for="exampleInputEmail1">Annual Charges</label>
+                          <input  name="annualFees" #annualFees="ngModel" [(ngModel)]="fees.feesSelected.annualFees"  type="number" class="form form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="annual charges">
+                          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label style="color:white" for="exampleInputEmail1">Stationary Charges</label>
+                            <input  name="stationaryCharges" #stationaryCharges="ngModel" [(ngModel)]="fees.feesSelected.stationaryCharges"  type="number" class="form form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="stationary charges">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                          </div>
+                      <div class="form-group">
+                          <label style="color:white" for="exampleInputEmail1">Card Charges</label>
+                          <input  name="CardCharges" #CardCharges="ngModel" [(ngModel)]="fees.feesSelected.CardCharges" type="number" class="form form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="card charges">
+                          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                      <div class="form-group">
+                        <label style="color:white" for="exampleInputPassword1">Monthly Fees</label>
+                        <input name="MonthlyFees" #MonthlyFees="ngModel" [(ngModel)]="fees.feesSelected.MonthlyFees" type="number" class=" form form-control" id="exampleInputPassword1" placeholder="monthly fees">
+                      </div>
+                      <!-- <p style="color:black; margin-top: 10px;">Go Back To <a routerLink="/login">Signin</a></p> -->
+                      <button [disabled]="!addform.valid"  type="submit" class="btn btn-dark btn-lg btn-block">Submit</button>
+                    </form>
+                    <button style="margin-top:10px;" (click)="resetForm(addform)" type="submit" class="btn btn-dark btn-lg btn-block">Reset</button>
+              </div>
+            </div>
+      </div>
+  </div>
+</div>

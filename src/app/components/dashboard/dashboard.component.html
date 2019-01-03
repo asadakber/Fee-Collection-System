@@ -1,0 +1,53 @@
+<nav style="opacity:0.9;background-color:black" class="navbar navbar-expand-lg navbar-dark ">
+    <a class="navbar-brand" href="#"><img width="50" height="50" src="../../../../assets/icon-money-1-300x300.png">Fee Collection System</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form class="form-inline my-2 my-lg-0">
+        <button style="margin-left:1000px;" class="btn btn-outline-danger my-2 my-sm-0" type="submit" (click)="logout()">Logout</button>
+      </form>
+    </div>
+  </nav>
+
+  <div style="margin-top:50px;" class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-5">
+          <table class="table table-1 table-hover table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">S.no</th>
+                  <th scope="col">Student Name</th>
+                  <th scope="col">Father Name</th>
+                  <th scope="col">Class</th>
+                  <th scope="col">Roll No</th>
+                  <th scope="col">Section</th>
+                  <th scope="col">Admission Fees</th>
+                  <th scope="col">Annual Charges</th>
+                  <th scope="col">Stationary Charges</th>
+                  <th scope="col">Card Charges</th>
+                  <th scope="col">Monthly Fees</th>
+                  <th scope="col">Total Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let fee of feesList; let i = index">
+                  <td>{{i + 1}}</td>
+                  <td>{{fee.studentName}}</td>
+                  <td>{{fee.fatherName}}</td>
+                  <td>{{fee.class}}</td>
+                  <td>{{fee.rollNo}}</td>
+                  <td>{{fee.section}}</td>
+                  <td>{{fee.admissionFees}}</td>
+                  <td>{{fee.annualFees}}</td>
+                  <td>{{fee.stationaryCharges}}</td>
+                  <td>{{fee.CardCharges}}</td>
+                  <td>{{fee.MonthlyFees}}</td>
+                  <td>{{fee.admissionFees+fee.stationaryCharges+fee.CardCharges+fee.MonthlyFees+fee.MonthlyFees}}</td>    
+                </tr>
+              </tbody>
+            </table>
+      </div>
+    </div>
+  </div>

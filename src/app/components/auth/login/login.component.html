@@ -1,0 +1,35 @@
+<nav style="opacity:0.9; background-color:black" class="navbar nav ">
+    <a class="navbar-brand" style="color:white; nargin-left:30px;"><img width="50" height="50" src="../../../../assets/icon-money-1-300x300.png">Fees Collection System</a>
+    <form class="form-inline">
+      <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" routerLink="/register">Signup</button>
+    </form>
+  </nav>
+<div class="container">
+    <div class="row  justify-content-center">
+        <div class="col-md-5">
+            <div class="card card0">
+                <div class="card-body">
+                    <div class="card-title">
+                        <img style="margin-left:160px;" width="80" height="80" src="../../../../assets/icon-money-1-300x300.png">
+                        <h3 style="color: white;text-align: center;margin-top:10px">LOGIN</h3>
+                    </div>
+                    
+                    <form [formGroup]="LoginForm" (ngSubmit)="login()">
+
+                        <div class="form-group">
+                          <label style="color:white" for="exampleInputEmail1">Email address</label>
+                          <input formControlName="email" type="email" class="form form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                          <label style="color:white" for="exampleInputPassword1">Password</label>
+                          <input formControlName="password" type="password" class=" form form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        <!-- <p style="color:black">Don't Have An Account Not Yet <a href="#" >Signup</a></p> -->
+                        <button [disabled]="!LoginForm.valid" type="submit" class="btn btn-dark btn-lg btn-block">Submit</button>
+                      </form>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
